@@ -19,20 +19,38 @@ var CircusApi = /*#__PURE__*/function () {
     key: "getData",
     value: function getData(key) {
       console.log("getting data for key " + key);
-      axios.get("".concat(this.API_URL, "/").concat(key)).then(this.handleSuccessfulReponse);
+      axios.get("".concat(this.API_URL, "/").concat(key)).then(this.handleSuccessfulReponse).catch(this.handleError);
+    }
+  }, {
+    key: "saveData",
+    value: function saveData(key, value) {
+      console.log("saving some data: " + key + " = " + value);
+      axios.post("".concat(this.API_URL, "/").concat(key), {
+        type: "string",
+        value: value
+      }).then(this.handleSuccessfulReponse).catch(this.handleError);
     }
   }, {
     key: "handleSuccessfulReponse",
     value: function handleSuccessfulReponse(response) {
       console.log("got a response!", response);
+      var value = response.data;
+      var evt = new CustomEvent("got-data", {
+        detail: value
+      });
+      document.querySelector("body").dispatchEvent(evt);
     }
   }, {
     key: "handleError",
     value: function handleError(error) {
-      console.log("got an error!", error);
+      console.info("got an error!", error);
+      var evt = new CustomEvent("got-error", {
+        detail: error
+      });
+      document.querySelector("body").dispatchEvent(evt);
     }
   }]);
 
   return CircusApi;
 }();
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=circus-api.js.map
