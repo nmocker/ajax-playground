@@ -30,7 +30,7 @@ getBtn.addEventListener("click", (event) => {
 
 const submitBtn = document.querySelector('[name="post"]');
 submitBtn.addEventListener("click", (event) => {
-  event.preventDefault;
+  event.preventDefault();
   console.log("test");
 
   const value = document.querySelector('[name="data"]').value;
