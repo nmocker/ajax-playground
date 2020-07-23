@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>¯\_(ツ)_/¯</title>
+    <title>AJAX Playground</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -12,15 +12,20 @@
 
   <body>
     <div class="floating-box">
-      <img class="logo" src="dist/img/logo.png" alt="Circus Logo" />
       <div class="foreground">
         <form id="form">
-          <input type="text" name="key" />
-          <button type="submit" name="get">GET VALUE</button>
+          <div class="get-value">
+            <input type="text" name="key" />
+            <button type="submit" name="get">GET VALUE</button>
+            <p name="result"></p>
+            <p name="message"></p>
+            <p class="error" name="error"></p>
+          </div>
 
-          <p name="result"></p>
-          <p name="message"></p>
-          <p class="error" name="error"></p>
+          <div class="submit-data">
+            <input type="text" name="data" />
+            <button type="submit" name="submit">SUBMIT DATA</button>
+          </div>
         </form>
       </div>
       <div class="background"></div>
