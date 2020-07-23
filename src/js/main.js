@@ -28,11 +28,11 @@ getBtn.addEventListener("click", (event) => {
   api.getData(key);
 });
 
-const submitBtn = document.querySelector('[name="submit"]');
+const submitBtn = document.querySelector('[name="post"]');
 submitBtn.addEventListener("click", (event) => {
-  // event.preventDefault;
+  event.preventDefault;
   console.log("test");
 
-  const value = document.querySelector('[name="submit"]').value;
-  api.saveData("", value);
+  const value = document.querySelector('[name="data"]').value;
+  api.saveData("test1234", value);
 });
