@@ -98,4 +98,30 @@ body {
     // margin: 10px 0;
     line-height: 140%;
   }
+
+  .error {
+    color: red;
+  }
+
+  .get-value {
+    margin-bottom: 15px;
+  }
+
+  input {
+    width: 65%;
+    margin-right: 10px;
+  }
+
+  button {
+    border-radius: 10px;
+    outline: none;
+    border: 3px #335070 solid;
+    background: #335070;
+    color: #fff;
+    cursor: pointer;
+    padding: 2px;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
